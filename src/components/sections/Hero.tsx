@@ -1,32 +1,55 @@
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
+import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 import { styles } from "../../constants/styles";
 import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
+
+const socialLinks = [
+  { id: "whatsapp", icon: <AiOutlineWhatsApp size={24} />, link: "https://wa.me/8100562078" },
+  { id: "github", icon: <Github size={24} />, link: "https://github.com/Kingsley-bit" },
+  { id: "linkedin", icon: <Linkedin size={24} />, link: "https://www.linkedin.com/in/ejike-kelechi-057818243/" },
+  { id: "twitter", icon: <Twitter size={24} />, link: "https://x.com/able_presido" },
+  { id: "facebook", icon: <Facebook size={24} />, link: "https://web.facebook.com/ejike.kelechi.73" },
+];
 
 const Hero = () => {
   return (
     <section className={`relative mx-auto h-screen w-full`}>
       <div
-        className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-col sm:flex-row items-center sm:items-start gap-5 p-5`}
       >
         <div className="mt-5 flex flex-col items-center justify-center">
           <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
           <div className="violet-gradient h-40 w-1 sm:h-80" />
         </div>
 
-        <div>
+        <div className="text-center sm:text-left">
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
           </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            {config.hero.p[0]} <br className="hidden sm:block" />
+          <p className={`${styles.heroSubText} text-white-100 mt-2`}> 
+            {config.hero.p[0]} <br className="hidden sm:block" /> 
             {config.hero.p[1]}
           </p>
         </div>
       </div>
 
       <ComputersCanvas />
+
+      {/* Social Media Icons */}
+      <div className="absolute bottom-10 right-5 flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4">
+        {socialLinks.map(({ id, icon, link }) => (
+          <Link
+            key={id}
+            to={link}
+            className="text-white transition-transform hover:scale-125 hover:text-[#915EFF]"
+          >
+            {icon}
+          </Link>
+        ))}
+      </div>
 
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">
