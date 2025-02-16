@@ -7,11 +7,11 @@ import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
 
 const socialLinks = [
-  { id: "whatsapp", icon: <AiOutlineWhatsApp size={24} />, link: "https://wa.me/8100562078" },
-  { id: "github", icon: <Github size={24} />, link: "https://github.com/Kingsley-bit" },
-  { id: "linkedin", icon: <Linkedin size={24} />, link: "https://www.linkedin.com/in/ejike-kelechi-057818243/" },
-  { id: "twitter", icon: <Twitter size={24} />, link: "https://x.com/able_presido" },
-  { id: "facebook", icon: <Facebook size={24} />, link: "https://web.facebook.com/ejike.kelechi.73" },
+  { id: "whatsapp", icon: <AiOutlineWhatsApp size={25} />, link: "https://wa.me/8100562078" },
+  { id: "github", icon: <Github size={25} />, link: "https://github.com/Kingsley-bit" },
+  { id: "linkedin", icon: <Linkedin size={25} />, link: "https://www.linkedin.com/in/ejike-kelechi-057818243/" },
+  { id: "twitter", icon: <Twitter size={25} />, link: "https://x.com/able_presido" },
+  { id: "facebook", icon: <Facebook size={25} />, link: "https://web.facebook.com/ejike.kelechi.73" },
 ];
 
 const Hero = () => {
@@ -39,7 +39,7 @@ const Hero = () => {
       <ComputersCanvas />
 
       {/* Social Media Icons */}
-      <div className="absolute bottom-10 right-5 flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4">
+      <div className="absolute bottom-10 right-5 flex flex-row sm:flex-col space-x-4  sm:space-x-0 sm:space-y-4">
         {socialLinks.map(({ id, icon, link }) => (
           <Link
             key={id}
