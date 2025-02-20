@@ -42,7 +42,7 @@ const services: TService[] = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Frontend Developer",
     icon: mobile,
   },
   {
@@ -50,7 +50,7 @@ const services: TService[] = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Full stack Developer",
     icon: creator,
   },
 ];
@@ -59,7 +59,7 @@ const services: TService[] = [
 const experiences: TExperience[] = [
   {
     title: "React.js Developer",
-    companyName: "Starbucks",
+    companyName: "Starmint",
     icon: starbucks,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
@@ -71,8 +71,8 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "React Native Developer",
-    companyName: "Tesla",
+    title: "Front end Developer",
+    companyName: "carinet",
     icon: tesla,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
@@ -98,7 +98,7 @@ const experiences: TExperience[] = [
   },
   {
     title: "Full stack Developer",
-    companyName: "Meta",
+    companyName: "Meterone",
     icon: meta,
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
