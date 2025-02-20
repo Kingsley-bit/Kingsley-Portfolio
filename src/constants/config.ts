@@ -4,6 +4,8 @@ type TSection = {
   content?: string;
 };
 
+
+
 type TConfig = {
   html: {
     title: string;
@@ -90,5 +92,21 @@ export const config: TConfig = {
     ability to solve complex problems, work with different technologies,
     and manage projects effectively.`,
     },
+  },
+  
+};
+type ContactFormConfig = {
+  form: {
+    name: { span: string; placeholder: string };
+    email: { span: string; placeholder: string };
+    message: { span: string; placeholder: string };
+  };
+};
+
+export const CONTACT_FORM_CONFIG: ContactFormConfig = {
+  form: {
+    name: { span: "Your Name", placeholder: "Enter your name" },
+    email: { span: "Your Email", placeholder: "Enter your email" },
+    message: { span: "Your Message", placeholder: "Enter your message" },
   },
 };

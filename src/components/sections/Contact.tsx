@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
+import { CONTACT_FORM_CONFIG } from "../../constants/config"; 
 import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
@@ -25,12 +25,12 @@ const Contact = () => {
   const [message, setMessage] = useState({ type: "", text: "" });
   const [emailError, setEmailError] = useState("");
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string): boolean  => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
 
@@ -39,7 +39,7 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateEmail(form.email)) {
       setEmailError("Invalid email format");
@@ -81,26 +81,25 @@ const Contact = () => {
         <Header useMotion={false} {...config.contact} />
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          {Object.keys(config.contact.form).map((input) => {
-            const { span, placeholder } = config.contact.form[input];
-            const Component = input === "message" ? "textarea" : "input";
+        {Object.entries(CONTACT_FORM_CONFIG.form).map(([key, { span, placeholder }]) => {
+            const Component = key === "message" ? "textarea" : "input";
 
             return (
-              <label key={input} className="flex flex-col">
-                <span className="mb-4 font-medium text-white">{span}</span>
-                <Component
-                  type={input === "email" ? "email" : "text"}
-                  name={input}
-                  value={form[input]}
-                  onChange={handleChange}
-                  placeholder={placeholder}
-                  className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
-                  {...(input === "message" && { rows: 7 })}
-                />
-                {input === "email" && emailError && (
-                  <p className="mt-2 text-red-500 text-sm">{emailError}</p>
-                )}
-              </label>
+              <label key={key} className="flex flex-col">
+              <span className="mb-4 font-medium text-white">{span}</span>
+              <Component
+                type={key === "email" ? "email" : "text"}
+                name={key}
+                value={form[key]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
+                {...(key === "message" && { rows: 7 })}
+              />
+              {key === "email" && emailError && (
+                <p className="mt-2 text-red-500 text-sm">{emailError}</p>
+              )}
+            </label>
             );
           })}
           <button
