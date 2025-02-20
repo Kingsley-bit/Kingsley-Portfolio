@@ -33,7 +33,7 @@ React.js and Three.js. It is a fully responsive website that works well on all d
   patterns found in JavaScript code.
 - [Prettier](https://prettier.io/): Prettier is an opinionated code formatter.
 - [Vercel](https://vercel.com/): Vercel is a cloud platform for frontend developers, providing the
-  frameworks, workflows, and infrastructure to build a faster, more personalized Web.
+  framework, workflows, and infrastructure to build a faster, more personalized Web.
 
 </details><br/>
 
