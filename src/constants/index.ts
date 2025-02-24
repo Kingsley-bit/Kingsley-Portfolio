@@ -157,7 +157,7 @@ const projects: TProject[] = [
       },
     ],
     image: carrent,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/Kingsley-bit",
   },
   {
     name: "Job IT",
@@ -178,7 +178,7 @@ const projects: TProject[] = [
       },
     ],
     image: jobit,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/kingsley-bit",
   },
   {
     name: "Trip Guide",
@@ -199,7 +199,7 @@ const projects: TProject[] = [
       },
     ],
     image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/kingsley-bit",
   },
 ];
 
