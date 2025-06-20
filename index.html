@@ -5,6 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="./logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kingsley 3D Portfolio</title>
+    <script>
+fetch("https://hook.eu2.make.com/kvf4un6jejttgdyx89mgagepge95gheo", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    event: "visit",
+    time: new Date().toISOString(),
+    userAgent: navigator.userAgent
+  })
+});
+</script>
   </head>
   <body>
     <div id="root"></div>
